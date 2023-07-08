@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Generation</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #878787;
+    }
+
+    .container {
+      max-width: 1000%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #c8c9cd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 1000%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: #e9720b;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button + button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+    <h1 style="color: rgb(0, 0, 0);"style="font-family: 'Times New Roman', Times, serif;font-size: medium;">CREATE</h1>
+
+    <style>
+      .container {
+          width: 95%;
+      }
+
+      textarea {
+          box-sizing: border-box;
+          width: 100%;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: medium;
+      }
+  </style>
+
+    <div class="container">
+        <label for="testTitle">Test Title:</label>
+        <textarea id="testTitle" placeholder="Enter test title"></textarea>
+    </div>
+
+    <button id="generateManual">Generate Manual Test Cases</button>
+    <button id="generateAutomation">Generate Automation Script</button>
+</div>
+
+<script>
+    const generateManualButton = document.getElementById('generateManual');
+    const generateAutomationButton = document.getElementById('generateAutomation');
+    const testTitleInput = document.getElementById('testTitle');
+
+    generateManualButton.addEventListener('click', function() {
+      const testTitle = testTitleInput.value;
+      alert('Generating manual test cases for: ' + testTitle);
+     // Open the ManualTest.html page withCaseGenerator Page with test title pre-populated
+     const url = './Manual_Page.html?testTitle=' + encodeURIComponent(testTitle);
+      window.open(url, '_blank');
+    });
+
+    generateAutomationButton.addEventListener('click', function() {
+      const testTitle = testTitleInput.value;
+      alert('Generating automation script for: ' + testTitle);
+
+      // Open the AutomationScriptGenerator.html page with the test title pre-populated
+      const url = './Automation_Page.html?testTitle=' + encodeURIComponent(testTitle);
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
